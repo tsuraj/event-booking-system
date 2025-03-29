@@ -55,10 +55,11 @@ Ensure you have the following installed:
 5. Start the Server
 
   rails s
+  in case of error related to secret_key_base, run(if using vscode) this command: EDITOR="code --wait" rails credentials:edit
 
 
 
-Authentication & User Roles
+**Authentication & User Roles**
 
 User Types:
 
