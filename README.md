@@ -6,7 +6,7 @@
 
 This is a backend API for an Event Booking System built with Ruby on Rails. It supports authentication for Event Organizers and Customers, role-based access control, event creation, ticket booking, and background jobs using Sidekiq.
 
-Tech Stack
+* Tech Stack
 
   Ruby on Rails (API mode)
   
