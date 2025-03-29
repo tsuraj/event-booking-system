@@ -8,14 +8,14 @@ This is a backend API for an Event Booking System built with Ruby on Rails. It s
 
 Tech Stack
 
-Ruby on Rails (API mode)
-
-PostgreSQL (Database)
-
-Devise + JWT (Authentication)
-
-Sidekiq + Redis (Background Jobs)
-
+  Ruby on Rails (API mode)
+  
+  PostgreSQL (Database)
+  
+  Devise + JWT (Authentication)
+  
+  Sidekiq + Redis (Background Jobs)
+  
 
 
 **Setup Instructions**
@@ -24,37 +24,37 @@ Prerequisites
 
 Ensure you have the following installed:
 
-Ruby 2.7.6
-
-Rails 7.x
-
-PostgreSQL
-
-Redis (for Sidekiq)
-
-Bundler
+  Ruby 2.7.6
+  
+  Rails 7.x
+  
+  PostgreSQL
+  
+  Redis (for Sidekiq)
+  
+  Bundler
 
 1. Clone the Repository
 
-git clone 
-cd event_booking_system
+  git clone 
+  cd event_booking_system
 
 2. Install Dependencies
 
-bundle install
+  bundle install
 
 3. Configure Database
 
-Update config/database.yml with your PostgreSQL credentials if needed.
-Then, create and migrate the database:
+  Update config/database.yml with your PostgreSQL credentials if needed.
+  Then, create and migrate the database:
 
-rails db:create
-rails db:migrate
+  rails db:create
+  rails db:migrate
 
 
 5. Start the Server
 
-rails s
+  rails s
 
 
 
@@ -62,57 +62,57 @@ Authentication & User Roles
 
 User Types:
 
-Event Organizers can create, update, and manage events.
-
-Customers can browse events and book tickets.
+  Event Organizers can create, update, and manage events.
+  
+  Customers can browse events and book tickets.
 
 Login & Authentication
 
-Authentication is handled via JWT tokens.
+  Authentication is handled via JWT tokens.
+  
+  To register or log in, use the Devise JWT endpoints:
 
-To register or log in, use the Devise JWT endpoints:
+  POST /users/sign_in 
+  On successful login, you’ll receive a JWT token. Include this token in requests:
+  
+  Authorization: Bearer <token>
 
-POST /users/sign_in 
-On successful login, you’ll receive a JWT token. Include this token in requests:
-
-Authorization: Bearer <token>
-
-API Endpoints
+**API Endpoints**
 
 Event Management 
+  
+  GET /events - List all events
+  
+  GET /events/:id - View an event
+  
+  POST /events - Create an event
+  
+  PUT /events/:id - Update an event
+  
+  DELETE /events/:id - Delete an event
+  
+  Booking API (Only for Customers)
+  
+  POST /bookings - Book a ticket
+  
+  {
+    "event_id": 1,
+    "ticket_id": 2,
+    "quantity": 1
+  }
 
-GET /events - List all events
-
-GET /events/:id - View an event
-
-POST /events - Create an event
-
-PUT /events/:id - Update an event
-
-DELETE /events/:id - Delete an event
-
-Booking API (Only for Customers)
-
-POST /bookings - Book a ticket
-
-{
-  "event_id": 1,
-  "ticket_id": 2,
-  "quantity": 1
-}
-
-Background Jobs (Sidekiq)
+**Background Jobs (Sidekiq)**
 
 1. Start Redis
 
-redis-server
+  redis-server
 
 2. Start Sidekiq
 
-bundle exec sidekiq
+  bundle exec sidekiq
 
 Jobs Implemented:
-
-BookingConfirmationJob - Sends booking confirmation email
-
-EventUpdateNotificationJob - Notifies customers if an event is updated
+  
+  BookingConfirmationJob - Sends booking confirmation email
+  
+  EventUpdateNotificationJob - Notifies customers if an event is updated
