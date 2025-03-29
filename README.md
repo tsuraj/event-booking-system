@@ -34,7 +34,7 @@ Ensure you have the following installed:
   
  * Bundler
 
-** 1. Clone the Repository **
+1. Clone the Repository 
 
   git clone 
   cd event_booking_system
