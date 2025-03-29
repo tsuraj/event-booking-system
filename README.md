@@ -6,15 +6,15 @@
 
 This is a backend API for an Event Booking System built with Ruby on Rails. It supports authentication for Event Organizers and Customers, role-based access control, event creation, ticket booking, and background jobs using Sidekiq.
 
-* Tech Stack
+**Tech Stack**
 
-  Ruby on Rails (API mode)
+  * Ruby on Rails (API mode)
   
-  PostgreSQL (Database)
+  * PostgreSQL (Database)
   
-  Devise + JWT (Authentication)
+  * Devise + JWT (Authentication)
   
-  Sidekiq + Redis (Background Jobs)
+  *  Sidekiq + Redis (Background Jobs)
   
 
 
@@ -24,15 +24,15 @@ Prerequisites
 
 Ensure you have the following installed:
 
-  Ruby 2.7.6
+ * Ruby 2.7.6
   
-  Rails 7.x
+ * Rails 7.x
   
-  PostgreSQL
+ * PostgreSQL
   
-  Redis (for Sidekiq)
+ * Redis (for Sidekiq)
   
-  Bundler
+ * Bundler
 
 1. Clone the Repository
 
