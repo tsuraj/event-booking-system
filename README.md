@@ -1,6 +1,6 @@
 # README
 
-*Event Booking System (Ruby on Rails)
+#Event Booking System (Ruby on Rails)
 
 Overview
 
